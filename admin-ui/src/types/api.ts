@@ -9,6 +9,7 @@ export interface CredentialsStatusResponse {
 // 单个凭据状态
 export interface CredentialStatusItem {
   id: number
+  name?: string
   priority: number
   disabled: boolean
   failureCount: number
@@ -60,9 +61,14 @@ export interface SetPriorityRequest {
   priority: number
 }
 
+export interface SetNameRequest {
+  name: string | null
+}
+
 // 添加凭据请求
 export interface AddCredentialRequest {
   refreshToken: string
+  name?: string
   authMethod?: 'social' | 'idc'
   clientId?: string
   clientSecret?: string

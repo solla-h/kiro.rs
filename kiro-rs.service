@@ -1,0 +1,15 @@
+[Unit]
+Description=kiro-rs Anthropic API Proxy
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/kiro-workspace/kiro.rs
+ExecStart=/home/ec2-user/kiro-workspace/kiro.rs/target/release/kiro-rs
+Restart=always
+RestartSec=3
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target

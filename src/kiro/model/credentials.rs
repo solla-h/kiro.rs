@@ -18,6 +18,10 @@ pub struct KiroCredentials {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id: Option<u64>,
 
+    /// 凭据自定义名称（可选，用于 Admin UI 显示）
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+
     /// 访问令牌
     #[serde(skip_serializing_if = "Option::is_none")]
     pub access_token: Option<String>,
@@ -321,6 +325,7 @@ mod tests {
     fn test_to_json() {
         let creds = KiroCredentials {
             id: None,
+            name: None,
             access_token: Some("token".to_string()),
             refresh_token: None,
             profile_arn: None,
@@ -439,6 +444,7 @@ mod tests {
         // 测试序列化时正确输出 region 字段
         let creds = KiroCredentials {
             id: None,
+            name: None,
             access_token: None,
             refresh_token: Some("test".to_string()),
             profile_arn: None,
@@ -469,6 +475,7 @@ mod tests {
         // 测试 region 为 None 时不序列化
         let creds = KiroCredentials {
             id: None,
+            name: None,
             access_token: None,
             refresh_token: Some("test".to_string()),
             profile_arn: None,
@@ -581,6 +588,7 @@ mod tests {
         // 测试序列化和反序列化的往返一致性
         let original = KiroCredentials {
             id: Some(42),
+            name: None,
             access_token: Some("token".to_string()),
             refresh_token: Some("refresh".to_string()),
             profile_arn: None,
