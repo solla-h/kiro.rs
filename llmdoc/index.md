@@ -21,6 +21,8 @@
 - [how-to-manage-credentials.md](guides/how-to-manage-credentials.md) — 如何配置和管理凭据、认证方式与 Token 刷新
 - [how-to-use-admin.md](guides/how-to-use-admin.md) — 如何启用和使用 Admin 管理系统
 - [how-to-deploy-service.md](guides/how-to-deploy-service.md) — 如何在 Linux 服务器上编译、配置并以 systemd 服务方式部署 kiro-rs
+- [system-prompt-sanitize-analysis.md](guides/system-prompt-sanitize-analysis.md) — System Prompt Sanitize 功能分析：数据流、插入点、风险评估与可选方案
+- [profilearn-bug-analysis.md](guides/profilearn-bug-analysis.md) — profileArn 缺失导致 400 错误的排查：根因分析、影响范围与修复方案
 
 ## Reference（参考资料）
 
