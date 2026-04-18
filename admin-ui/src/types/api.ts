@@ -19,12 +19,15 @@ export interface CredentialStatusItem {
   hasProfileArn: boolean
   email?: string
   refreshTokenHash?: string
+  apiKeyHash?: string
+  maskedApiKey?: string
   successCount: number
   lastUsedAt: string | null
   hasProxy: boolean
   proxyUrl?: string
   refreshFailureCount: number
   disabledReason?: string
+  endpoint: string
 }
 
 // 余额响应
@@ -67,9 +70,9 @@ export interface SetNameRequest {
 
 // 添加凭据请求
 export interface AddCredentialRequest {
-  refreshToken: string
+  refreshToken?: string
   name?: string
-  authMethod?: 'social' | 'idc'
+  authMethod?: 'social' | 'idc' | 'api_key'
   clientId?: string
   clientSecret?: string
   priority?: number
@@ -79,6 +82,8 @@ export interface AddCredentialRequest {
   proxyUrl?: string
   proxyUsername?: string
   proxyPassword?: string
+  kiroApiKey?: string
+  endpoint?: string
 }
 
 // 添加凭据响应
